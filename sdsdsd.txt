@@ -1,0 +1,3 @@
+@foreach(var userDetails in Model.ListUserLogin){
+                                         @userDetails.LoggedUserNameSide
+                                }
