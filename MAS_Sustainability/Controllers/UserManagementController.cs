@@ -17,23 +17,18 @@ namespace MAS_Sustainability.Controllers
             List<UserRegistrationModel> List_UserRegistration = new List<UserRegistrationModel>();
             MainModel mainModel = new MainModel();
             DataTable userDetailsDataTable = new DataTable();
-
             DB dbConn = new DB();
 
-    
             using (MySqlConnection mySqlCon = dbConn.DBConnection())
             {
                 mySqlCon.Open();
                 String qry_listOfTokens = "SELECT UserName,UserType,UserID,UserEmail,UserMobile,UserDepartment FROM users WHERE UserEmail = '" + Session["user"] + "'";
                 MySqlDataAdapter mySqlDa = new MySqlDataAdapter(qry_listOfTokens, mySqlCon);
                 mySqlDa.Fill(userDetailsDataTable);
-
-
             }
 
             for (int i = 0; i < userDetailsDataTable.Rows.Count; i++)
             {
-
                 List_UserRegistration.Add(new UserRegistrationModel
                 {
                     UserFullName = userDetailsDataTable.Rows[0][0].ToString(),
@@ -42,21 +37,16 @@ namespace MAS_Sustainability.Controllers
                     UserEmail = userDetailsDataTable.Rows[0][3].ToString(),
                     UserMobile = userDetailsDataTable.Rows[0][4].ToString(),
                     UserDepartment = userDetailsDataTable.Rows[0][5].ToString()
-
                 }
                 );
-
             }
 
-
-            if (userDetailsDataTable.Rows.Count == 1)
+            if(userDetailsDataTable.Rows.Count == 1)
             {
                 mainModel.LoggedUserName = userDetailsDataTable.Rows[0][0].ToString();
                 mainModel.LoggedUserType = userDetailsDataTable.Rows[0][1].ToString();
                 mainModel.LoggedUserID = Convert.ToInt32(userDetailsDataTable.Rows[0][2]);
-
                 mainModel.ListUserRegistration = List_UserRegistration;
-
                 return View(mainModel);
             }
             else

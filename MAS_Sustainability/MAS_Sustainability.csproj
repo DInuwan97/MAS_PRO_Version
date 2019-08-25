@@ -200,6 +200,8 @@
     <Content Include="Views\UserManagement\Edit.cshtml" />
     <Content Include="Views\UserManagement\Index.cshtml" />
     <Content Include="Views\UserManagement\UserProfile.cshtml" />
+    <Content Include="Views\Token\MyTokens.cshtml" />
+    <Content Include="Views\Token\TokenUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
