@@ -454,7 +454,7 @@ namespace MAS_Sustainability.Controllers
                 mySqlCon.Open();
                 String qry_myTokens = "SELECT tka.TokenAuditID,tka.Category,usr.UserName,tka.AddedDate,tk.ProblemName,tk.Location,tk.AttentionLevel,tkf.TokenManagerStatus " +
                     "FROM mas_isscs.token_audit tka,mas_isscs.tokens tk,mas_isscs.token_flow tkf,mas_isscs.users usr WHERE " +
-                    "tka.TokenAuditID = tk.TokenAuditID AND tkf.TokenManagerStatus = 'Pending' and tka.TokenAuditID = tkf.TokenAuditID AND " +
+                    "tka.TokenAuditID = tk.TokenAuditID  and tka.TokenAuditID = tkf.TokenAuditID AND " +
                     "tka.AddedUser = '" + Session["user"] + "' and tka.AddedUser = usr.UserEmail";
 
                 MySqlDataAdapter mySqlDA = new MySqlDataAdapter(qry_myTokens, mySqlCon);
@@ -577,13 +577,18 @@ namespace MAS_Sustainability.Controllers
             {
 
                 mySqlCon.Open();
-                String update_token_details = "UPDATE tokens tk,token_audit tka SET tk.ProblemName = @ProblemName,tk.Location = @Location,tka.Category = @ProblemCategory  WHERE tka.TokenAuditID = tk.TokenAuditID and tka.TokenAuditID = @TokenAuditID";
 
+                String update_token_details = "UPDATE tokens tk,token_audit tka SET tk.ProblemName = @ProblemName,tk.Location = @Location,tka.Category = @ProblemCategory  WHERE tka.TokenAuditID = tk.TokenAuditID and tka.TokenAuditID = @TokenAuditID";
                 MySqlCommand mySqlCommand_update_token_status = new MySqlCommand(update_token_details, mySqlCon);
+                mySqlCommand_update_token_status.Parameters.AddWithValue("@Description",tokenModel.Description);
                 mySqlCommand_update_token_status.Parameters.AddWithValue("@TokenAuditID",tokenModel.TokenAuditID);
-                mySqlCommand_update_token_status.Parameters.AddWithValue("@ProblemName",tokenModel.ProblemName);
-                mySqlCommand_update_token_status.Parameters.AddWithValue("@Location",tokenModel.Location);
-                mySqlCommand_update_token_status.Parameters.AddWithValue("@ProblemCategory",tokenModel.ProblemCategory);
+                mySqlCommand_update_token_status.Parameters.AddWithValue("@ProblemName", tokenModel.ProblemName);
+                mySqlCommand_update_token_status.Parameters.AddWithValue("@Location", tokenModel.Location);
+                mySqlCommand_update_token_status.Parameters.AddWithValue("@ProblemCategory", tokenModel.ProblemCategory);
+
+      
+
+
                 mySqlCommand_update_token_status.ExecuteNonQuery();
 
             }
@@ -592,6 +597,36 @@ namespace MAS_Sustainability.Controllers
             return RedirectToAction("MyTokens");
         }
 
-   
+        public ActionResult DoUpdateProcessInDetail(Token tokenModel)
+        {
+            DB dbConn = new DB();
+
+            using (MySqlConnection mySqlCon = dbConn.DBConnection())
+            {
+
+                mySqlCon.Open();
+               
+
+                String update_token_details = "UPDATE tokens tk,token_audit tka SET tk.AttentionLevel = @AttentionLevel, tk.Description = @Description,tk.ProblemName = @ProblemName,tk.Location = @Location,tka.Category = @ProblemCategory  WHERE tka.TokenAuditID = tk.TokenAuditID and tka.TokenAuditID = @TokenAuditID";
+
+                MySqlCommand mySqlCommand_update_token_status = new MySqlCommand(update_token_details, mySqlCon);
+                mySqlCommand_update_token_status.Parameters.AddWithValue("@TokenAuditID", tokenModel.TokenAuditID);
+                mySqlCommand_update_token_status.Parameters.AddWithValue("@ProblemName", tokenModel.ProblemName);
+                mySqlCommand_update_token_status.Parameters.AddWithValue("@Location", tokenModel.Location);
+                mySqlCommand_update_token_status.Parameters.AddWithValue("@ProblemCategory", tokenModel.ProblemCategory);
+
+                mySqlCommand_update_token_status.Parameters.AddWithValue("@AttentionLevel", tokenModel.AttentionLevel);
+                mySqlCommand_update_token_status.Parameters.AddWithValue("@Description", tokenModel.Description);
+
+
+                mySqlCommand_update_token_status.ExecuteNonQuery();
+
+            }
+
+
+            return RedirectToAction("MyTokens");
+        }
+
+
     }
 }
