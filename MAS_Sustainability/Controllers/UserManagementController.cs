@@ -181,6 +181,43 @@ namespace MAS_Sustainability.Controllers
         }
 
 
+        public ActionResult UpdateUserProfile(UserRegistrationModel userRegistrationModel)
+        {
+            DB dbConn = new DB();
+
+            string UserImageFile = Path.GetFileNameWithoutExtension(userRegistrationModel.UserImage.FileName);
+            string extension2 = Path.GetExtension(userRegistrationModel.UserImage.FileName);
+            UserImageFile = UserImageFile + DateTime.Now.ToString("yymmssfff") + extension2;
+            userRegistrationModel.UserImagePath = "~/userimages/" + UserImageFile;
+            UserImageFile = Path.Combine(Server.MapPath("~/userimages/"), UserImageFile);
+            userRegistrationModel.UserImage.SaveAs(UserImageFile);
+
+            String userImgPath = userRegistrationModel.UserImagePath;
+
+
+
+
+            using (MySqlConnection mySqlCon = dbConn.DBConnection())
+            {
+                mySqlCon.Open();
+
+
+                String qry_update_userDetails = "UPDATE users SET UserName = @UserName, UserMobile = @UserMobile , UserImage = @userImgPath WHERE UserID = @UserID";
+
+                MySqlCommand mySqlCommand_update_userDetails = new MySqlCommand(qry_update_userDetails, mySqlCon);
+                mySqlCommand_update_userDetails.Parameters.AddWithValue("@UserID", userRegistrationModel.UserID);
+                mySqlCommand_update_userDetails.Parameters.AddWithValue("@UserName", userRegistrationModel.UserFullName);
+                mySqlCommand_update_userDetails.Parameters.AddWithValue("@UserMobile", userRegistrationModel.UserMobile);
+                mySqlCommand_update_userDetails.Parameters.AddWithValue("@userImgPath", userRegistrationModel.UserImagePath);
+                mySqlCommand_update_userDetails.ExecuteNonQuery();
+
+
+            }
+
+            return RedirectToAction("index");
+        }
+
+
 
     }
 }
