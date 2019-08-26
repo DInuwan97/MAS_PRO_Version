@@ -15,6 +15,8 @@ namespace MAS_Sustainability
         public List<UserRegistrationModel> ListUserRegistration { get; set; }
         public List<Token> TokenList { get; set; }
 
+        
+
 
 
         public int[] ArrTokenAuditID { get; set; }
@@ -50,6 +52,10 @@ namespace MAS_Sustainability
 
 
 
+        //for UserManagement Controller's UserProfile View
+        public String UserImagePath { get; set; }
+        public String[] ArrUserImagePath { get; set; }
+        //for UserManagement Controller's UserProfile View
 
 
 
