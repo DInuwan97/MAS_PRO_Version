@@ -26,8 +26,8 @@
         </div>
 
         <div class="login-aside w-50 d-flex align-items-center justify-content-center bg-white">
-            <div class="container">
-                <h3 class="text-center">Sign Up</h3>
+            <div class="container container-login animated fadeIn col-sm-10 ">
+                <h4 class="text-center">Sign Up</h4>
 
 
                 <div class="login-form">
@@ -39,67 +39,66 @@
 
                         @*<div class="form-row">
 
-                            <div class="form-group form-floating-label">
-                                <input id="fullname" name="UserFullName" type="text" class="form-control input-border-bottom" required>
-                                <label for="fullname" class="placeholder">Full Name</label>
-                            </div>
+                <div class="form-group form-floating-label">
+                    <input id="fullname" name="UserFullName" type="text" class="form-control input-border-bottom" required>
+                    <label for="fullname" class="placeholder">Full Name</label>
+                </div>
 
-                            <div class="form-group form-floating-label">
-                                <input id="mobile" name="UserMobile" type="text" class="form-control input-border-bottom" required>
-                                <label for="mobile" class="placeholder">Mobile</label>
-                            </div>
+                <div class="form-group form-floating-label">
+                    <input id="mobile" name="UserMobile" type="text" class="form-control input-border-bottom" required>
+                    <label for="mobile" class="placeholder">Mobile</label>
+                </div>
 
-                        </div>*@
+            </div>*@
 
                         <div class="form-group form-show-validation row">
-                            <label class="col-sm-4"><b>Full Name</b></label>
-                            <div class="col-sm-8">
-                                <input id="fullname" name="UserFullName" type="text" class="form-control" 
-                                       placeholder="Enter FullName" required>
+
+                            <div class="col-sm-12">
+                                <input id="fullname" name="UserFullName" type="text" class="form-control"
+                                       placeholder="Full Name" required>
                             </div>
                         </div>
 
                         <div class="form-group form-show-validation row">
-                            <label class="col-sm-4 col-form-label"><b>Mobile</b></label>
-                            <div class="col-sm-8">
-                                <input id="UserMobile" name="UserMobile" type="text" class="form-control" 
-                                       placeholder="Enter Mobile No" required>
+                            @*<label class="col-sm-4 col-form-label"><b>Mobile</b></label>*@
+                            <div class="col-sm-12">
+                                <input id="UserMobile" name="UserMobile" type="text" class="form-control"
+                                       placeholder="Mobile No" required>
                             </div>
                         </div>
 
                         <div class="form-group form-show-validation row">
-                            <label class="col-sm-4 col-form-label"><b>Email</b></label>
-                            <div class="col-sm-8">
-                                <input id="email" name="UserEmail" type="email" class="form-control" 
-                                       placeholder="Enter Email" required>
+                            <div class="col-sm-12">
+                                <input id="email" name="UserEmail" type="email" class="form-control"
+                                       placeholder="Email" required>
                             </div>
                         </div>
 
                         <div class="form-group form-show-validation row">
-                            <label class="col-sm-4 col-form-label"><b>Department</b></label>
-                            <div class="col-sm-8">
-                                <div class="select2-input"> 
+
+                            <div class="col-sm-12">
+                                <div class="select2-input">
                                     <select name="UserDepartment" id="UserDepartment" class="form-control" required>
-                                    <option value="" disabled selected>Select Your Department</option>
-                                    <option value="Factory Engineering">Factory Engineering</option>
-                                    <option value="Production Engineering">Production Engineering</option>
-                                    <option value="Autonomation">Autonomation</option>
-                                    <option value="MOS">MOS</option>
-                                    <option value="RM">RM</option>
-                                    <option value="Quality">Quality</option>
-                                    <option value="FG">FG</option>
-                                    <option value="Technical">Technical</option>
-                                    <option value="Cutting">Cutting</option>
-                                    <option value="HR">HR</option>
-                                    <option value="Operation">Operation</option>
-                                    <option value="Production VSM 01">Production VSM 01</option>
-                                    <option value="Production VSM 02">Production VSM 02</option>
-                                    <option value="Production VSM 03">Production VSM 03</option>
-                                    <option value="Production VSM 04">Production VSM 04</option>
-                                    <option value="Pre-Sewing">Pre-Sewing</option>
-                                    <option value="Emblishment">Emblishment</option>
-                                    <option value="IE">IE</option>
-                                   </select>
+                                        <option value="" disabled selected>Your Department</option>
+                                        <option value="Factory Engineering">Factory Engineering</option>
+                                        <option value="Production Engineering">Production Engineering</option>
+                                        <option value="Autonomation">Autonomation</option>
+                                        <option value="MOS">MOS</option>
+                                        <option value="RM">RM</option>
+                                        <option value="Quality">Quality</option>
+                                        <option value="FG">FG</option>
+                                        <option value="Technical">Technical</option>
+                                        <option value="Cutting">Cutting</option>
+                                        <option value="HR">HR</option>
+                                        <option value="Operation">Operation</option>
+                                        <option value="Production VSM 01">Production VSM 01</option>
+                                        <option value="Production VSM 02">Production VSM 02</option>
+                                        <option value="Production VSM 03">Production VSM 03</option>
+                                        <option value="Production VSM 04">Production VSM 04</option>
+                                        <option value="Pre-Sewing">Pre-Sewing</option>
+                                        <option value="Emblishment">Emblishment</option>
+                                        <option value="IE">IE</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -107,95 +106,87 @@
 
 
                         @*<div class="form-group form-floating-label">
-                         <input id="email" name="UserEmail" type="email" class="form-control input-border-bottom" required>
-                         <label for="email" class="placeholder">Email</label>
-                        </div>*@
+             <input id="email" name="UserEmail" type="email" class="form-control input-border-bottom" required>
+             <label for="email" class="placeholder">Email</label>
+            </div>*@
 
                         @*<div class="input-group mb-3">
-                            <div class="input-group-prepend" style="margin-left:8px;">
-                                <label class="input-group-text" for="inputGroupSelect02">Department</label>
-                            </div>
-                            <select class="custom-select" name="UserDepartment" id="inputGroupSelect02" required="" style="margin-right:8px; height:40px;">
-                                <option value="">Select Your Department</option>
-                                <option value="Factory Engineering">Factory Engineering</option>
-                                <option value="Production Engineering">Production Engineering</option>
-                                <option value="Autonomation">Autonomation</option>
-                                <option value="MOS">MOS</option>
-                                <option value="RM">RM</option>
-                                <option value="Quality">Quality</option>
-                                <option value="FG">FG</option>
-                                <option value="Technical">Technical</option>
-                                <option value="Cutting">Cutting</option>
-                                <option value="HR">HR</option>
-                                <option value="Operation">Operation</option>
-                                <option value="Production VSM 01">Production VSM 01</option>
-                                <option value="Production VSM 02">Production VSM 02</option>
-                                <option value="Production VSM 03">Production VSM 03</option>
-                                <option value="Production VSM 04">Production VSM 04</option>
-                                <option value="Pre-Sewing">Pre-Sewing</option>
-                                <option value="Emblishment">Emblishment</option>
-                                <option value="IE">IE</option>
-                            </select>
-                        </div>*@
+                <div class="input-group-prepend" style="margin-left:8px;">
+                    <label class="input-group-text" for="inputGroupSelect02">Department</label>
+                </div>
+                <select class="custom-select" name="UserDepartment" id="inputGroupSelect02" required="" style="margin-right:8px; height:40px;">
+                    <option value="">Select Your Department</option>
+                    <option value="Factory Engineering">Factory Engineering</option>
+                    <option value="Production Engineering">Production Engineering</option>
+                    <option value="Autonomation">Autonomation</option>
+                    <option value="MOS">MOS</option>
+                    <option value="RM">RM</option>
+                    <option value="Quality">Quality</option>
+                    <option value="FG">FG</option>
+                    <option value="Technical">Technical</option>
+                    <option value="Cutting">Cutting</option>
+                    <option value="HR">HR</option>
+                    <option value="Operation">Operation</option>
+                    <option value="Production VSM 01">Production VSM 01</option>
+                    <option value="Production VSM 02">Production VSM 02</option>
+                    <option value="Production VSM 03">Production VSM 03</option>
+                    <option value="Production VSM 04">Production VSM 04</option>
+                    <option value="Pre-Sewing">Pre-Sewing</option>
+                    <option value="Emblishment">Emblishment</option>
+                    <option value="IE">IE</option>
+                </select>
+            </div>*@
 
 
                         @*<div class="form-group form-floating-label">
-                                    <input id="Password" name="Password" type="password" class="form-control input-border-bottom" required>
-                                    <label for="Password" class="placeholder">Password</label>
-                                   <div class="show-password">
-                                      <i class="icon-eye"></i>
-                                      </div>
+                        <input id="Password" name="Password" type="password" class="form-control input-border-bottom" required>
+                        <label for="Password" class="placeholder">Password</label>
+                       <div class="show-password">
+                          <i class="icon-eye"></i>
+                          </div>
+                        </div>
+
+            <div class="form-group form-floating-label">
+                <input id="ConfirmPassword" name="ConfirmPassword" type="password" class="form-control input-border-bottom" required>
+                <label for="ConfirmPassword" class="placeholder">Confirm Password</label>
+                <div class="show-password">
+                    <i class="icon-eye"></i>
+                </div>
+            </div>*@
+                        <div class="form-group row">
+                            <div class="form-show-validation col-sm-6">
+                                <input id="Password" name="Password" type="password" class="form-control"
+                                       placeholder="Password" required>
+                                 <div class="show-password">
+                                     <i class="icon-eye"></i>
+                                 </div>
+                            </div>
+
+                            <div class="form-show-validation col-sm-6">
+                                 <input id="ConfirmPassword" name="ConfirmPassword" type="password" class="form-control"
+                                        placeholder="Confirm Password" required>
+                                 <div class="show-password">
+                                     <i class="icon-eye"></i>
+                                 </div>
+                            </div> 
+                        </div>
+
+                            <div class="col-sm-12">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" name="agree" id="agree" required>
+                                        <label class="custom-control-label" for="agree">I Agree the terms and conditions.</label>
                                     </div>
 
-                        <div class="form-group form-floating-label">
-                            <input id="ConfirmPassword" name="ConfirmPassword" type="password" class="form-control input-border-bottom" required>
-                            <label for="ConfirmPassword" class="placeholder">Confirm Password</label>
-                            <div class="show-password">
-                                <i class="icon-eye"></i>
-                            </div>
-                        </div>*@
-
-                        <div class="form-group form-show-validation row">
-                            <label class="col-sm-4 col-form-label"><b>Password</b></label>
-                            <div class="col-sm-8">
-                                <input id="Password" name="Password" type="password" class="form-control"
-                                       placeholder="Enter Password" required>
-                                <div class="show-password">
-                                    <i class="icon-eye"></i>
-                                   </div>
-                                </div>
-                        </div>
-
-                        <div class="form-group form-show-validation row">
-                            <label class="col-sm-4 col-form-label"><b>Confirm Password</b></label>
-                            <div class="col-sm-8">
-                                <input id="ConfirmPassword" name="ConfirmPassword" type="password" class="form-control" 
-                                       placeholder="Confirm Password" required>
-                                <div class="show-password">
-                                    <i class="icon-eye"></i>
+                                <div class="form-action">
+                                    @Html.ActionLink("Sign In", "Login", "UserLogin", null, new { @class = "btn btn-link btn-link btn-login mr-3" })
+                                    <input type="submit" value="Sign Up" class="btn btn-secondary col-md-5 float-right mt-3 mt-sm-0 fw-bold" />
                                 </div>
                             </div>
+
+                            }
+
                         </div>
-
-                        <div class="col-sm-8" style="margin-left:auto;">
-                            <div class="row form-sub m-0">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="agree" id="agree" required>
-                                    <label class="custom-control-label" for="agree">I Agree the terms and conditions.</label>
-                                </div>
-                            </div>
-                            <br />
-
-                            <div class="form-action">
-                                @Html.ActionLink("Sign In", "Login", "UserLogin", null, new { @class = "btn btn-link btn-link btn-login mr-3" })
-                                <input type="submit" value="Sign Up" class="btn btn-secondary col-md-5 float-right mt-3 mt-sm-0 fw-bold" />
-                            </div>
-                        </div>
-
-                    }
-
-                </div>
-            </div>
+                    </div>
         </div>
         <!--   Core JS Files   -->
         <script src="~/Content/assets/js/core/jquery.3.2.1.min.js"></script>
